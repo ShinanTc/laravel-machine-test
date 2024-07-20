@@ -5,7 +5,10 @@
 </head>
 <body>
     <h1>Student Information</h1>
-    <form method="post" action="">
+    <form method="post" action="{{ route('added_student') }}">
+        
+        @csrf
+    
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br><br>
 
@@ -14,6 +17,9 @@
 
         <label for="standard">Standard:</label>
         <input type="text" id="standard" name="standard" required><br><br>
+       
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password" required><br><br>
 
         <input type="submit" value="Submit">
     </form>
