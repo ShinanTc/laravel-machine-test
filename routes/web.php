@@ -13,7 +13,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/teacher/add_student', function () {
     return view('/teacher/add_student');
-})->middleware(['auth', 'verified'])->name('add_student');
+})->middleware(['auth', 'verified','is_teacher'])->name('add_student');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
