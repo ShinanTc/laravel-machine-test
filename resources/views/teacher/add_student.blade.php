@@ -5,6 +5,7 @@
 </head>
 <body>
     <h1>Student Information</h1>
+    
     <form method="post" action="{{ route('added_student') }}">
 
         @csrf
