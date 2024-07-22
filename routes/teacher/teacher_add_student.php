@@ -25,5 +25,4 @@ Route::post('/teacher/add_student', function (Request $request) {
 
 })->middleware(['auth', 'verified','is_teacher'])->name('added_student');
 
-
 require_once app_path() . '\Services\StudentServices.php';
