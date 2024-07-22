@@ -1,23 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Subject Mark Form</title>
-</head>
 <body>
-    <h1>Add Marks</h1>
+  <h1>Add Marks</h1>
 
-        @csrf
-    
-        <label for="student-name">Student Name:</label>
-        <input type="text" id="student-name" name="student-name" required><br><br>
-                
-        <label for="subject-name">Subject Name:</label>
-        <input type="text" id="subject-name" name="subject-name" required><br><br>
+  @csrf
 
-        <label for="subject-mark">Enter Mark:</label>
-        <input type="text" id="subject-mark" name="subject-mark" required><br><br>
+  <div class="form-group">
+    <label for="student_id">Student:</label>
+    <select name="student_id" id="student_id" required>
+      <option value="">Select Student</option>
+      @foreach ($students as $student)
+        <option value="{{ $student->id }}">{{ $student->name }}</option>
+      @endforeach
+    </select>
+  </div>
 
-        <input type="submit" value="Add Mark">
-    </form>
+  <div class="form-group">
+    <label for="subject_id">Subject:</label>
+    <select name="subject_id" id="subject_id" required>
+      <option value="">Select Subject</option>
+      @foreach ($subjects as $subject)
+        <option value="{{ $subject->id }}">{{ $subject->name }}</option>
+      @endforeach
+    </select>
+  </div>
+
+  <label for="subject_mark">Enter Mark:</label>
+  <input type="text" id="subject_mark" name="subject_mark" required><br><br>
+
+  <input type="submit" value="Add Mark">
 </body>
-</html>
