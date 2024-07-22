@@ -15,7 +15,21 @@ class SubjectService {
         ]);
 
         event(new Registered($subject));
+        
+        return $subject;
+    }
+
+    // Find Subject
+    public function findSubject(string $subjectName)
+    {
+        $subject = Subject::where('name', $subjectName)->first();
+
+        // Handle potential errors
+        if (!$subject) {
+            return back()->withErrors(['subject-name' => 'Subject not found.']);
+        }
 
         return $subject;
     }
+    
 }

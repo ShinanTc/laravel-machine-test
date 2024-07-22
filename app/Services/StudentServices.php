@@ -22,4 +22,18 @@ class StudentService {
 
         return $user;
     }
+
+    // Find student
+    public function findStudent(string $studentName)
+    {
+        $student = User::where('name', $studentName)->first();
+
+        // Handle potential errors
+        if (!$student) {
+            return back()->withErrors(['student-name' => 'Student not found.']);
+        }
+        
+        return $student;
+    }
+    
 }

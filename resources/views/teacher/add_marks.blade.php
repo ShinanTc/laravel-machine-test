@@ -9,6 +9,8 @@
 <body>
 
 <h1>Add Marks</h1>
+
+<form method="post" action="{{ route('added_marks') }}">
 @csrf
 
 <label for="student-name">Student Name</label>

@@ -11,14 +11,14 @@ Route::get('/teacher/add_student', function () {
 // create student route
 Route::post('/teacher/add_student', function (Request $request) {
 
-    $studentService = new StudentService;
-
     // deconstructing request body values
     $name = Request::input('name');
     $email = Request::input('email');
     $age = Request::input('age');
     $standard = Request::input('standard');
     $password = Request::input('password');
+
+    $studentService = new StudentService;
 
     // create user data for students
     $user = $studentService->createStudent($name, $email, $password, $age, $standard);
