@@ -4,7 +4,6 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Event;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Auth\Events\Registered;
 use App\Models\User;
 
