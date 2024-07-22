@@ -1,30 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Marks</title>
+</head>
+
 <body>
-  <h1>Add Marks</h1>
 
-  @csrf
+<h1>Add Marks</h1>
+@csrf
 
-  <div class="form-group">
-    <label for="student_id">Student:</label>
-    <select name="student_id" id="student_id" required>
-      <option value="">Select Student</option>
-      @foreach ($students as $student)
-        <option value="{{ $student->id }}">{{ $student->name }}</option>
-      @endforeach
-    </select>
-  </div>
+<label for="student-name">Student Name</label>
+<input type="text" name="student-name" id="student-name" required><br><br>
 
-  <div class="form-group">
-    <label for="subject_id">Subject:</label>
-    <select name="subject_id" id="subject_id" required>
-      <option value="">Select Subject</option>
-      @foreach ($subjects as $subject)
-        <option value="{{ $subject->id }}">{{ $subject->name }}</option>
-      @endforeach
-    </select>
-  </div>
+<label for="subject-name">Subject Name</label>
+<input type="text" name="subject-name" id="subject-name" required><br><br>
 
-  <label for="subject_mark">Enter Mark:</label>
-  <input type="text" id="subject_mark" name="subject_mark" required><br><br>
+<label for="subject-mark">Enter Mark:</label>
+<input type="text" name="subject-mark" id="subject-mark" required><br><br>
 
-  <input type="submit" value="Add Mark">
+<input type="submit" value="Add Mark">
+
+</form>
 </body>
+
+
+</html>
