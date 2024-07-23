@@ -22,4 +22,17 @@ class StudentSubjectService {
         return $studentSubject;
     }
 
+    // get student subjects and marks
+    public function getAllStudentSubjects()
+    {
+        $studentSubjects = StudentSubjects::all();
+
+        if(!$studentSubjects){
+            return back()->withErrors('Marks not found.');
+        }
+
+        return $studentSubjects;
+        
+    }
+
 }
