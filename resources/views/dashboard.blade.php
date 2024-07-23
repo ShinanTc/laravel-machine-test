@@ -20,7 +20,7 @@
                     {{ __("You're logged in as student!") }}
                 </div>
 
-                <a href="{{ route('dashboard') }}" style="margin-left: 50%; border: 2px solid black;"><button>Progress Card</button></a>
+                <a href="{{ route('view_progress_card') }}" style="margin-left: 50%; border: 2px solid black;"><button>Progress Card</button></a>
                 
             @endif
 
