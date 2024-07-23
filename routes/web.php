@@ -21,3 +21,4 @@ require __DIR__.'/auth.php';
 require __DIR__.'/teacher/teacher_add_student.php';
 require __DIR__.'/teacher/teacher_add_subject.php';
 require __DIR__.'/teacher/teacher_add_marks.php';
+require __DIR__.'/teacher/teacher_view_student_data.php';
