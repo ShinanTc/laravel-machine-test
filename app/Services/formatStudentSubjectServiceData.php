@@ -4,11 +4,10 @@ namespace App\Services;
 
 use App\Models\User;
 use App\Models\Subject;
-use Illuminate\Support\Facades\Log;
 
 class FormatResponseService
 {
-    public function formatResponseData($responseData)
+    public function formatResponseDataByUser($responseData)
     {
 
         $processedData = collect($responseData)->map(function ($data) {
@@ -27,4 +26,23 @@ class FormatResponseService
 
         return $processedData;
     }
+
+    public function formatResponseDataBySubject($responseData)
+    {
+
+        $processedData = collect($responseData)->map(function ($data) {
+            $subject = Subject::find($data['subject_id']);
+
+            return [
+                'subject_name' => $subject ? $subject->name : null,
+                'marks' => $data['marks'],
+                'status' => $data['status'],
+            ];
+            
+        });
+
+        return $processedData;
+        
+    }
+    
 }

@@ -6,6 +6,30 @@
     <title>Progress Card</title>
 </head>
 <body>
-    <p>This is the progress card</p>
+<table>
+  <thead>
+    <tr>
+      <th>Subject Name</th>
+      <th>Marks</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    @if (!empty($studentData))
+      @foreach ($studentData as $subject)
+        <tr>
+          <td>{{ $subject['subject_name'] }}</td> <td>{{ $subject['marks'] }}</td>
+            <td>{{ $subject['status'] }}</td>
+          </td>
+        </tr>
+      @endforeach
+    @else
+      <tr>
+        <td colspan="3">No data available.</td>
+      </tr>
+    @endif
+  </tbody>
+</table>
+    
 </body>
 </html>

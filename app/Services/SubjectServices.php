@@ -19,6 +19,19 @@ class SubjectService {
         return $subject;
     }
 
+    // Find Subject by id
+    public function findSubjectbyId(int $subjectId)
+    {
+        $subject = Subject::where('id', $subjectId)->first();
+
+        // Handle potential errors
+        if (!$subject) {
+            return back()->withErrors(['subject-name' => 'Subject not found.']);
+        }
+
+        return $subject;
+    }
+
     // Find Subject
     public function findSubject(string $subjectName)
     {

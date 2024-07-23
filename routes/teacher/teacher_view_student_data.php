@@ -13,7 +13,7 @@ Route::get('/teacher/view_students', function () {
     // for formatting the data we got from studentSubjects table
     // to make it organised to get from the client
     $formatResponseService = new FormatResponseService;
-    $studentsData = $formatResponseService->formatResponseData($studentSubjects);
+    $studentsData = $formatResponseService->formatResponseDataByUser($studentSubjects);
 
     return view('/teacher/view_student_data', compact('studentsData'));
 })->middleware(['auth', 'verified', 'is_teacher'])->name('view_students');
