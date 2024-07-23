@@ -26,7 +26,9 @@ class StudentService {
     // Find student
     public function findStudent(string $studentName)
     {
-        $student = User::where('name', $studentName)->first();
+        $student = User::where('name', $studentName)
+                        ->where('user_role', 'student')
+                        ->first();
 
         // Handle potential errors
         if (!$student) {
