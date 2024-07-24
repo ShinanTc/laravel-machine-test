@@ -94,7 +94,7 @@ After logging in on the right side corner, there you can see your username. Clic
 
 `/student/view_progress_card` route is accessible to both students & Teachers. Teachers can see all the students marks (They already have another route to do that which is `/teacher/view_student_data`, so this route wont have any filters). If student is the user, he can only see the marks of himself. 
 
-# Restrcting Access
+# Restricting Access
 
 Every /teacher/ parent route is restricted to teachers only. You will get an Unauthorized error if you try to acccess it as a student. We have used an IsTeacher middleware to implement this which is inside `app\Http\Middleware`.
 
